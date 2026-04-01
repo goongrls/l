@@ -2,54 +2,61 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<title>Loading...</title>
+<title>Accès 18+</title>
 
-<!-- Preview X -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Exclusive 18+ 🔞">
-<meta name="twitter:description" content="Tap to unlock private access">
+<meta name="twitter:description" content="Tap to access private content">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/goongrls/l/main/preview.jpg">
 
 <style>
 body {
   margin:0;
-  background:#000;
+  background:#0a0a0a;
   color:#fff;
-  font-family:Arial;
+  font-family:Arial, sans-serif;
   display:flex;
   justify-content:center;
   align-items:center;
   height:100vh;
+  text-align:center;
+}
+.box {
+  max-width:320px;
+}
+button {
+  background:#ff0033;
+  border:none;
+  padding:14px 28px;
+  color:#fff;
+  font-size:16px;
+  border-radius:10px;
+  margin-top:20px;
+  cursor:pointer;
+}
+.small {
+  font-size:12px;
+  opacity:0.7;
+  margin-top:10px;
 }
 </style>
-
-<script>
-// génération dynamique SANS écrire le mot directement
-function build(){
-  let a = "https://getmysocial.com/";
-  
-  // mot caché en charCode séparé
-  let b = [108,97,110,116,109,97,100,105,115,111,110]; 
-  
-  let c = b.map(x => String.fromCharCode(x)).join('');
-  
-  return a + c;
-}
-
-function go(){
-  let delay = 1500 + Math.random()*1500;
-
-  setTimeout(() => {
-    window.location.replace(build());
-  }, delay);
-}
-
-window.onload = go;
-</script>
-
 </head>
 
 <body>
-<h2>Loading secure access...</h2>
+<div class="box">
+  <h2>🔞 Accès réservé aux adultes</h2>
+  <p>En continuant, vous confirmez avoir 18 ans ou plus.</p>
+
+  <button onclick="go()">Continuer</button>
+
+  <div class="small">Contenu externe</div>
+</div>
+
+<script>
+function go(){
+  window.location.href = "https://getmysocial.com/lantmadison";
+}
+</script>
+
 </body>
 </html>
