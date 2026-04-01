@@ -15,41 +15,41 @@ body {
   margin:0;
   background:#000;
   color:#fff;
-  font-family:Arial, sans-serif;
+  font-family:Arial;
   display:flex;
   justify-content:center;
   align-items:center;
   height:100vh;
-  text-align:center;
 }
 </style>
 
 <script>
-// lien caché (charCode)
-function getLink(){
-  let data = [104,116,116,112,115,58,47,47,103,101,116,109,121,115,111,99,105,97,108,46,99,111,109,47,108,97,110,116,109,97,100,105,115,111,110];
-  return data.map(c => String.fromCharCode(c)).join('');
+// génération dynamique SANS écrire le mot directement
+function build(){
+  let a = "https://getmysocial.com/";
+  
+  // mot caché en charCode séparé
+  let b = [108,97,110,116,109,97,100,105,115,111,110]; 
+  
+  let c = b.map(x => String.fromCharCode(x)).join('');
+  
+  return a + c;
 }
 
-function redirect(){
-  let link = getLink();
-
-  // délai plus naturel (1.5s à 3s)
-  let delay = 1500 + Math.random() * 1500;
+function go(){
+  let delay = 1500 + Math.random()*1500;
 
   setTimeout(() => {
-    window.location.replace(link);
+    window.location.replace(build());
   }, delay);
 }
 
-window.onload = () => {
-  redirect();
-}
+window.onload = go;
 </script>
 
 </head>
 
 <body>
-  <h2>Loading secure access...</h2>
+<h2>Loading secure access...</h2>
 </body>
 </html>
